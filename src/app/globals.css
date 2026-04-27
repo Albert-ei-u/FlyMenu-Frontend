@@ -1,26 +1,208 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --rose: #e0c0b1;
+  --muted: #666666;
+  --panel: #111111;
+  --panel-soft: #1a1a1a;
+  --line: #262626;
+  --orange: #f97316;
+  --peach: #ffb690;
+  --fog: #e5e2e1;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: #0d0d0d;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: Manrope, Aptos, sans-serif;
+  background: #0d0d0d;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer utilities {
+  .hover-lift {
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 70px rgba(249, 115, 22, 0.24);
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-lift,
+  .hover-lift:hover {
+    transform: none;
+    transition: none;
+  }
+}
+
+
+/* Booking confirmed */
+.booking-confirmed {
+  background:
+    radial-gradient(circle at 50% 10%, rgba(255, 182, 144, 0.08), transparent 22rem),
+    #1f0f08;
+}
+
+.confirmation-logo {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 24px rgba(249, 115, 22, 0.14));
+}
+
+.confirmation-card {
+  min-height: 400px;
+  border: 1px solid #6d4433;
+  border-radius: 10px;
+  background: #302016;
+  padding: clamp(2rem, 5vw, 2.8rem);
+}
+
+.phone-qr {
+  display: grid;
+  width: 208px;
+  height: 208px;
+  place-items: center;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.phone-screen {
+  position: relative;
+  display: grid;
+  width: 160px;
+  height: 160px;
+  place-items: center;
+  background: #071013;
+}
+
+.phone-screen::before {
+  content: "";
+  width: 72px;
+  height: 118px;
+  border: 7px solid white;
+  border-radius: 18px;
+  background:
+    linear-gradient(90deg, #111 25%, transparent 25% 75%, #111 75%) 0 0 / 18px 18px,
+    linear-gradient(#111 25%, transparent 25% 75%, #111 75%) 0 0 / 18px 18px,
+    #ffffff;
+}
+
+.phone-screen span {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background:
+    linear-gradient(90deg, #111 50%, transparent 50%) 0 0 / 10px 10px,
+    linear-gradient(#111 50%, transparent 50%) 0 0 / 10px 10px,
+    white;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 1.1rem;
+  color: var(--orange);
+}
+
+.detail-row svg {
+  width: 22px;
+  height: 22px;
+  margin-top: 0.2rem;
+}
+
+.detail-row dt {
+  color: #d8c2b8;
+  font-size: 0.72rem;
+}
+
+.detail-row dd {
+  margin: 0.25rem 0 0;
+  color: #ffe8dc;
+  font-weight: 900;
+}
+
+.confirmation-button {
+  display: flex;
+  min-height: 67px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  border: 1px solid #6d4433;
+  border-radius: 10px;
+  background: #3b281f;
+  color: #ffe8dc;
+  font-weight: 900;
+}
+
+.confirmation-button.primary {
+  border-color: var(--orange);
+  background: var(--orange);
+  color: #1f0f08;
+}
+
+.arrival-note {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  border-left: 4px solid var(--orange);
+  border-radius: 8px;
+  background: #170a05;
+  padding: 1.6rem;
+  color: #ffe8dc;
+}
+
+.arrival-note small {
+  display: block;
+  margin-top: 0.4rem;
+  color: #d8c2b8;
 }
