@@ -5,6 +5,7 @@ type AuthShellProps = {
   children: ReactNode;
 };
 
+
 export function AuthShell({ children }: AuthShellProps) {
   return (
     <main className="relative grid min-h-dvh grid-cols-1 overflow-hidden bg-[#0d0d0d] lg:grid-cols-[0.45fr_0.55fr]">
