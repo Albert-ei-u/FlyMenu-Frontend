@@ -7,7 +7,6 @@ type AuthCardProps = {
   centered?: boolean;
   children: ReactNode;
 };
-
 export function AuthCard({
   backHref = "/",
   centered = false,
