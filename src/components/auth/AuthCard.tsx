@@ -8,7 +8,6 @@ type AuthCardProps = {
   children: ReactNode;
 };
 
-
 export function AuthCard({
   backHref = "/",
   centered = false,
