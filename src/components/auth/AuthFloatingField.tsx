@@ -11,7 +11,6 @@ type AuthFloatingFieldProps = {
   autoComplete?: string;
   required?: boolean;
   passwordToggle?: boolean;
-  
 };
 
 export function AuthFloatingField({
