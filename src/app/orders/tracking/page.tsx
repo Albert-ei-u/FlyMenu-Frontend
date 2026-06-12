@@ -12,7 +12,6 @@ import {
   Star,
   Wine,
 } from "lucide-react";
-
 import { CustomerShell } from "@/components/customer/CustomerShell";
 import { Reveal } from "@/components/motion/Reveal";
 import { api } from "@/lib/api";
