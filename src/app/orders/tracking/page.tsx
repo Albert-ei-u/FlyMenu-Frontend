@@ -40,9 +40,8 @@ export default function OrderTrackingPage() {
       } catch (err) {
         console.error("Failed to fetch order tracking:", err);
       } finally {
-
-        setLoading(false);
         
+        setLoading(false);
       }
     };
 
