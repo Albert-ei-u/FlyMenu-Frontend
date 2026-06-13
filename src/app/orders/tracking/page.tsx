@@ -28,7 +28,7 @@ export default function OrderTrackingPage() {
   ]);
 
   useEffect(() => {
-
+    
     const fetchLatestOrder = async () => {
       try {
         const orders = await api.get("/orders");
@@ -40,7 +40,6 @@ export default function OrderTrackingPage() {
       } catch (err) {
         console.error("Failed to fetch order tracking:", err);
       } finally {
-        
         setLoading(false);
       }
     };
