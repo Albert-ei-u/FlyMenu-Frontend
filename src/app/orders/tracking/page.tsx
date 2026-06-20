@@ -32,7 +32,6 @@ export default function OrderTrackingPage() {
 
 
 
-    
     const fetchLatestOrder = async () => {
       try {
         const orders = await api.get("/orders");
