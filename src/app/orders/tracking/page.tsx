@@ -23,7 +23,6 @@ export default function OrderTrackingPage() {
 
   const [selectedTags, setSelectedTags] = useState<string[]>([
     "Great Presentation",
-    
   ]);
 
   useEffect(() => {
