@@ -31,7 +31,6 @@ export default function OrderTrackingPage() {
 
 
 
-
     
     const fetchLatestOrder = async () => {
       try {
