@@ -26,6 +26,7 @@ export default function OrderTrackingPage() {
 
   useEffect(() => {
     
+
     const fetchLatestOrder = async () => {
       try {
         const orders = await api.get("/orders");
